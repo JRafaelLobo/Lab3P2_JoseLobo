@@ -15,13 +15,12 @@ public class Bicicleta extends Vehiculo {
         this.BMX = BMX;
     }
 
-    public Bicicleta(String descripcion, double radio, boolean BMX, String color, String marca, String modelo, int ano, int precio, int cantidad) {
-        super(color, marca, modelo, ano, precio, cantidad);
+    public Bicicleta(String descripcion, double radio, boolean BMX, String color, String marca, String modelo, int ano, double precio, int cantidad, String concesionario) {
+        super(color, marca, modelo, ano, precio, cantidad, concesionario);
         this.descripcion = descripcion;
         this.radio = radio;
         this.BMX = BMX;
     }
-    
 
     public String getDescripcion() {
         return descripcion;
@@ -49,7 +48,7 @@ public class Bicicleta extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Bicicleta{" + "descripcion=" + descripcion + ", radio=" + radio + ", BMX=" + BMX + '}';
+        return super.toString() + "Bicicleta{" + "descripcion=" + descripcion + ", radio=" + radio + ", BMX=" + BMX + '}';
     }
 
 }

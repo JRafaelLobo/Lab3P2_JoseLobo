@@ -1,10 +1,16 @@
 package com.mycompany.lab3p2_josolobo;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab3P2_JosoLobo {
 
+    static ArrayList<Vehiculo> consecionarias = new ArrayList();
+
     public static void main(String[] args) {
+        ArrayList<Vehiculo> vehiculos = new ArrayList();
+        ArrayList<Cliente> clientes = new ArrayList();
+
         Scanner leer = new Scanner(System.in);
         int Opcion;
         do {
@@ -27,6 +33,41 @@ public class Lab3P2_JosoLobo {
 
                 }//case 2
                 case 3 -> {
+                    System.out.println("""
+                                       -----------------------------------
+                                       Que tipo de Vehiculo desea anadir:
+                                       1. Carro
+                                       2. Camion de Carga
+                                       3. Bus
+                                       4. Motocicleta
+                                       5. Bicicleta
+                                       -----------------------------------
+                                       Ingrese Su Opcion:""");
+                    int resp = leer.nextInt();
+                    String[] temp = ModificarVehiculos();
+                    switch (resp) {
+                        case 1 -> {
+                            String[] temp2 = ModificarCarro();
+                            Carro C = new Carro(Integer.parseInt(temp2[0]), Integer.parseInt(temp2[1]), temp2[2], temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
+                        }//case 1
+                        case 2 -> {
+                            String[] temp2 = ModificarCamion();
+                        }//case 1
+                        case 3 -> {
+                            System.out.println("Ingrese el numero maximo de Pacientes: ");
+                            int a = leer.nextInt();
+                        }//case 1
+                        case 4 -> {
+                            String[] temp2 = ModificarMotocicleta();
+                        }//case 1
+                        case 5 -> {
+                            String[] temp2 = ModificarBicicleta();
+                        }//case 1
+                        default -> {
+                            System.out.println("Opcion Incorrecta... ");
+                        }//case 1
+
+                    }//switch opcion 3
 
                 }//case 3
                 case 4 -> {
@@ -43,7 +84,7 @@ public class Lab3P2_JosoLobo {
     }//main
 
     public static String[] ModificarVehiculos() {
-        String[] temp = new String[6];
+        String[] temp = new String[7];
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese el Color:");
         temp[0] = leer.next();
@@ -57,6 +98,9 @@ public class Lab3P2_JosoLobo {
         temp[4] = leer.next();
         System.out.println("Ingrese la Cantidad:");
         temp[5] = leer.next();
+        imprimirArrayList(consecionarias);
+        System.out.println("Ingrese el Concesionario:");
+        temp[6] = leer.next();
         return temp;
     }
 
@@ -89,7 +133,7 @@ public class Lab3P2_JosoLobo {
         return temp;
     }
 
-    public static String[] ModificarMoticicleta() {
+    public static String[] ModificarMotocicleta() {
         String[] temp = new String[2];
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese el desplazamiento del motor:");
@@ -116,5 +160,12 @@ public class Lab3P2_JosoLobo {
             temp[3] = "false";
         }
         return temp;
+    }
+
+    public static void imprimirArrayList(ArrayList a) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i + ". " + a.get(i));
+        }
+
     }
 }

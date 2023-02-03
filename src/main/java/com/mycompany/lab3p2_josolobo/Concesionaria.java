@@ -47,10 +47,12 @@ public class Concesionaria {
     public void addCliente(Cliente a) {
         clientes.add(a);
     }
-    public void addVehiculo(Vehiculo a){
+
+    public void addVehiculo(Vehiculo a) {
         vehiculos.add(a);
     }
-    public void delVehiculo(Vehiculo a){
+
+    public void delVehiculo(Vehiculo a) {
         vehiculos.remove(a);
     }
 

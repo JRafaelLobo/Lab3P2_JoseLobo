@@ -2,19 +2,21 @@ package com.mycompany.lab3p2_josolobo;
 
 public class Vehiculo {
 
-    protected String color, marca, modelo;
-    protected int ano, precio, cantidad;
+    protected String color, marca, modelo, concesionario;
+    protected int ano, cantidad;
+    double precio;
 
     public Vehiculo() {
     }
 
-    public Vehiculo(String color, String marca, String modelo, int ano, int precio, int cantidad) {
+    public Vehiculo(String color, String marca, String modelo, int ano, double precio, int cantidad, String concesionario) {
         this.color = color;
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.precio = precio;
         this.cantidad = cantidad;
+        this.concesionario = concesionario;
     }
 
     public String getColor() {
@@ -49,7 +51,7 @@ public class Vehiculo {
         this.ano = ano;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
@@ -65,9 +67,13 @@ public class Vehiculo {
         this.cantidad = cantidad;
     }
 
+    public String getConcesionario() {
+        return concesionario;
+    }
+
     @Override
     public String toString() {
         return "Vehiculo{" + "color=" + color + ", marca=" + marca + ", modelo=" + modelo + ", ano=" + ano + ", precio=" + precio + ", cantidad=" + cantidad + '}';
     }
-    
+
 }

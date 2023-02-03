@@ -14,13 +14,12 @@ public class Camion extends Vehiculo {
         this.retroescabadora = retroescabadora;
     }
 
-    public Camion(int volumen, int altura, boolean retroescabadora, String color, String marca, String modelo, int ano, int precio, int cantidad) {
-        super(color, marca, modelo, ano, precio, cantidad);
+    public Camion(int volumen, int altura, boolean retroescabadora, String color, String marca, String modelo, int ano, double precio, int cantidad, String concesionario) {
+        super(color, marca, modelo, ano, precio, cantidad, concesionario);
         this.volumen = volumen;
         this.altura = altura;
         this.retroescabadora = retroescabadora;
     }
-    
 
     public int getVolumen() {
         return volumen;
@@ -48,7 +47,7 @@ public class Camion extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Camion{" + "volumen=" + volumen + ", altura=" + altura + ", retroescabadora=" + retroescabadora + '}';
+        return super.toString()+"Camion{" + "volumen=" + volumen + ", altura=" + altura + ", retroescabadora=" + retroescabadora + '}';
     }
 
 }

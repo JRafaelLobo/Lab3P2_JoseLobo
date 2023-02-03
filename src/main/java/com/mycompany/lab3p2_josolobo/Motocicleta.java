@@ -1,5 +1,7 @@
 package com.mycompany.lab3p2_josolobo;
+
 public class Motocicleta extends Vehiculo {
+
     private int desplazamiento;
     private boolean electrica;
 
@@ -11,12 +13,11 @@ public class Motocicleta extends Vehiculo {
         this.electrica = electrica;
     }
 
-    public Motocicleta(int desplazamiento, boolean electrica, String color, String marca, String modelo, int ano, int precio, int cantidad) {
-        super(color, marca, modelo, ano, precio, cantidad);
+    public Motocicleta(int desplazamiento, boolean electrica, String color, String marca, String modelo, int ano, double precio, int cantidad, String concesionario) {
+        super(color, marca, modelo, ano, precio, cantidad, concesionario);
         this.desplazamiento = desplazamiento;
         this.electrica = electrica;
     }
-    
 
     public int getDesplazamiento() {
         return desplazamiento;
@@ -36,7 +37,7 @@ public class Motocicleta extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Motocicleta{" + "desplazamiento=" + desplazamiento + ", electrica=" + electrica + '}';
+        return super.toString() + "Motocicleta{" + "desplazamiento=" + desplazamiento + ", electrica=" + electrica + '}';
     }
-    
+
 }

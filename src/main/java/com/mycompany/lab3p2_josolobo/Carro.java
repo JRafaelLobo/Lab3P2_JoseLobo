@@ -14,8 +14,8 @@ public class Carro extends Vehiculo {
         this.Descripcion = Descripcion;
     }
 
-    public Carro(int puertas, int velocidad, String Descripcion, String color, String marca, String modelo, int ano, int precio, int cantidad) {
-        super(color, marca, modelo, ano, precio, cantidad);
+    public Carro(int puertas, int velocidad, String Descripcion, String color, String marca, String modelo, int ano, double precio, int cantidad,String concesionario) {
+        super(color, marca, modelo, ano, precio, cantidad,concesionario);
         this.puertas = puertas;
         this.velocidad = velocidad;
         this.Descripcion = Descripcion;
