@@ -64,4 +64,10 @@ public class Vehiculo {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" + "color=" + color + ", marca=" + marca + ", modelo=" + modelo + ", ano=" + ano + ", precio=" + precio + ", cantidad=" + cantidad + '}';
+    }
+    
 }

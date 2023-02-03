@@ -20,4 +20,10 @@ public class Cliente {
         this.saldo = saldo;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente{" + "id=" + id + ", saldo=" + saldo + ", nombre=" + nombre + '}';
+    }
+    
+
 }
