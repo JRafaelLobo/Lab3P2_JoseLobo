@@ -1,6 +1,6 @@
 package com.mycompany.lab3p2_josolobo;
 
-public class Bus {
+public class Bus extends Vehiculo {
 
     private int pasajeros;
     private String tipo;

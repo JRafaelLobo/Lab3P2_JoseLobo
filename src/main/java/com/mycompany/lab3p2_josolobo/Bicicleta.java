@@ -1,6 +1,6 @@
 package com.mycompany.lab3p2_josolobo;
 
-public class Bicicleta {
+public class Bicicleta extends Vehiculo {
 
     String descripcion;
     double radio;

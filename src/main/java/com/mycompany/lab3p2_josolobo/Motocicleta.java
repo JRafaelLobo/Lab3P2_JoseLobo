@@ -1,5 +1,5 @@
 package com.mycompany.lab3p2_josolobo;
-public class Motocicleta {
+public class Motocicleta extends Vehiculo {
     private int desplazamiento;
     private boolean electrica;
 

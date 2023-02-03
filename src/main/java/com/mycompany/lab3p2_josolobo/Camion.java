@@ -1,6 +1,6 @@
 package com.mycompany.lab3p2_josolobo;
 
-public class Camion {
+public class Camion extends Vehiculo {
 
     private int volumen, altura;
     private boolean retroescabadora;

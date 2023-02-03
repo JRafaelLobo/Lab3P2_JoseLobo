@@ -1,8 +1,6 @@
 package com.mycompany.lab3p2_josolobo;
 
-import java.awt.Color;
-
-public class Carro {
+public class Carro extends Vehiculo {
 
     private int puertas, velocidad;
     private String Descripcion;
@@ -10,8 +8,14 @@ public class Carro {
     public Carro() {
     }
 
-    
     public Carro(int puertas, int velocidad, String Descripcion) {
+        this.puertas = puertas;
+        this.velocidad = velocidad;
+        this.Descripcion = Descripcion;
+    }
+
+    public Carro(int puertas, int velocidad, String Descripcion, String color, String marca, String modelo, int ano, int precio, int cantidad) {
+        super(color, marca, modelo, ano, precio, cantidad);
         this.puertas = puertas;
         this.velocidad = velocidad;
         this.Descripcion = Descripcion;
@@ -45,5 +49,5 @@ public class Carro {
     public String toString() {
         return "Carro{" + "puertas=" + puertas + ", velocidad=" + velocidad + ", Descripcion=" + Descripcion + '}';
     }
-    
+
 }
