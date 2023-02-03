@@ -14,7 +14,7 @@ public class Vehiculo {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
-        this.precio = precio;
+        setPrecio(precio);
         this.cantidad = cantidad;
         this.concesionario = concesionario;
     }
@@ -55,8 +55,10 @@ public class Vehiculo {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
+        if(precio>=0){
         this.precio = precio;
+        }
     }
 
     public int getCantidad() {
