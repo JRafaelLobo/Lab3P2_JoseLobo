@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Concesionaria {
 
-    String nombre, direccion;
-    int id;
-    double saldo;
-    ArrayList<Vehiculo> vehiculos = new ArrayList();
-    ArrayList<Cliente> clientes = new ArrayList();
+    private String nombre, direccion;
+    private int id;
+    private double saldo;
+    private ArrayList<Vehiculo> vehiculos = new ArrayList();
+    private ArrayList<Cliente> clientes = new ArrayList();
 
     public Concesionaria() {
     }
@@ -18,6 +18,10 @@ public class Concesionaria {
         this.direccion = direccion;
         this.id = id;
         this.saldo = saldo;
+    }
+
+    public ArrayList<Vehiculo> getArrayVehiculos() {
+        return vehiculos;
     }
 
     public String getNombre() {
@@ -52,7 +56,7 @@ public class Concesionaria {
         vehiculos.add(a);
     }
 
-    public void delVehiculo(Vehiculo a) {
+    public void delVehiculo(int a) {
         vehiculos.remove(a);
     }
 

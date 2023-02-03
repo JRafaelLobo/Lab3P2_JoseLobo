@@ -4,7 +4,7 @@ public class Vehiculo {
 
     protected String color, marca, modelo, concesionario;
     protected int ano, cantidad;
-    double precio;
+    protected double precio;
 
     public Vehiculo() {
     }
