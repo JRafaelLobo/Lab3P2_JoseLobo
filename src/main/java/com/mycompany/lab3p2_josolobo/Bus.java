@@ -12,6 +12,11 @@ public class Bus extends Vehiculo {
         setPasajeros(pasajeros);
     }
 
+    public Bus(int pasajeros, String color, String marca, String modelo, int ano, int precio, int cantidad) {
+        super(color, marca, modelo, ano, precio, cantidad);
+        setPasajeros(pasajeros);
+    }
+
     public int getPasajeros() {
         return pasajeros;
     }

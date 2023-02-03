@@ -14,6 +14,14 @@ public class Camion extends Vehiculo {
         this.retroescabadora = retroescabadora;
     }
 
+    public Camion(int volumen, int altura, boolean retroescabadora, String color, String marca, String modelo, int ano, int precio, int cantidad) {
+        super(color, marca, modelo, ano, precio, cantidad);
+        this.volumen = volumen;
+        this.altura = altura;
+        this.retroescabadora = retroescabadora;
+    }
+    
+
     public int getVolumen() {
         return volumen;
     }

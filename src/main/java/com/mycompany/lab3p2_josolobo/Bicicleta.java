@@ -15,6 +15,14 @@ public class Bicicleta extends Vehiculo {
         this.BMX = BMX;
     }
 
+    public Bicicleta(String descripcion, double radio, boolean BMX, String color, String marca, String modelo, int ano, int precio, int cantidad) {
+        super(color, marca, modelo, ano, precio, cantidad);
+        this.descripcion = descripcion;
+        this.radio = radio;
+        this.BMX = BMX;
+    }
+    
+
     public String getDescripcion() {
         return descripcion;
     }
