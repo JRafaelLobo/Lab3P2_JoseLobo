@@ -27,7 +27,30 @@ public class Lab3P2_JosoLobo {
             Opcion = leer.nextInt();
             switch (Opcion) {
                 case 1 -> {
+                    System.out.println("""
+                                       ----------------------
+                                       1. Agregar Consecionario
+                                       2. Eliminar consegionario
+                                       ---------------------
+                                       Ingrese la Opcion:""");
+                    switch (leer.nextInt()) {
+                        case 1 -> {
+                            System.out.println("Ingrese el Nombre: ");
+                            String nombre = leer.next();
+                            System.out.println("Ingrese la direccion");
+                            String direccion = leer.next();
+                            System.out.println("Ingrese el Saldo: ");
+                            double saldo = leer.nextDouble();
+                            IdVehiculos++;
+                            Concesionaria V = new Concesionaria(nombre, direccion, IdVehiculos, saldo);
+                            consecionarias.add(V);
 
+                        }
+                        case 2 -> {
+                            imprimirArrayList(consecionarias);
+                            System.out.println("Ingrese la opcion");
+                        }
+                    }
                 }//case 1
                 case 2 -> {
                     System.out.println("""
@@ -51,7 +74,7 @@ public class Lab3P2_JosoLobo {
                             imprimirArrayList(clientes);
                             System.out.println("""
                                                ------------------------------
-                                               Ingrese el id:""");
+                                               Ingrese la opcion a Eliminar:""");
                             int id = leer.nextInt();
                             clientes.remove(id);
                         }
