@@ -12,7 +12,7 @@ public class Lab3P2_JosoLobo {
         ArrayList<Cliente> clientes = new ArrayList();
 
         Scanner leer = new Scanner(System.in);
-        int Opcion, idCliente = -1, IdVehiculos = -1, IdConse = -1;
+        int Opcion, idCliente = -1, IdConse = -1;
         do {
             System.out.println("""
                            -----------------------------------------------------
@@ -41,8 +41,8 @@ public class Lab3P2_JosoLobo {
                             String direccion = leer.next();
                             System.out.println("Ingrese el Saldo: ");
                             double saldo = leer.nextDouble();
-                            IdVehiculos++;
-                            Concesionaria V = new Concesionaria(nombre, direccion, IdVehiculos, saldo);
+                            IdConse++;
+                            Concesionaria V = new Concesionaria(nombre, direccion, IdConse, saldo);
                             concesionarias.add(V);
 
                         }
@@ -82,7 +82,7 @@ public class Lab3P2_JosoLobo {
                     }
                 }//case 2
                 case 3 -> {
-                    if (concesionarias.size() != 0) {
+                    if (!concesionarias.isEmpty()) {
                         System.out.println("""
                                       ------------------------------
                                        Que desea hacer:
