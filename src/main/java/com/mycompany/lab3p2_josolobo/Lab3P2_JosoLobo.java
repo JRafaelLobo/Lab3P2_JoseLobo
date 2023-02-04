@@ -82,18 +82,19 @@ public class Lab3P2_JosoLobo {
                     }
                 }//case 2
                 case 3 -> {
-                    System.out.println("""
+                    if (concesionarias.size() != 0) {
+                        System.out.println("""
                                       ------------------------------
                                        Que desea hacer:
                                        1.Agregar Vehiculo
                                        2.Eliminar Vehculo
                                        -----------------------------
                                        Ingrese la Opcion""");
-                    int opcion2 = leer.nextInt();
-                    switch (opcion2) {
+                        int opcion2 = leer.nextInt();
+                        switch (opcion2) {
 
-                        case 1 -> {
-                            System.out.println("""
+                            case 1 -> {
+                                System.out.println("""
                                        -----------------------------------
                                        Que tipo de Vehiculo desea anadir:
                                        1. Carro
@@ -103,50 +104,51 @@ public class Lab3P2_JosoLobo {
                                        5. Bicicleta
                                        -----------------------------------
                                        Ingrese Su Opcion:""");
-                            int resp = leer.nextInt();
-                            String[] temp = ModificarVehiculos();
-                            switch (resp) {
-                                case 1 -> {
-                                    String[] temp2 = ModificarCarro();
-                                    Carro C = new Carro(Integer.parseInt(temp2[0]), Integer.parseInt(temp2[1]), temp2[2], temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
-                                    vehiculos.add(C);
-                                }//case 1
-                                case 2 -> {
-                                    String[] temp2 = ModificarCamion();
-                                    Camion C = new Camion(Integer.parseInt(temp2[0]), Integer.parseInt(temp2[1]), Boolean.parseBoolean(temp2[2]), temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
-                                    vehiculos.add(C);
-                                }//case 2
-                                case 3 -> {
-                                    System.out.println("Ingrese el numero maximo de Pacientes: ");
-                                    Bus B = new Bus(leer.nextInt(), temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
-                                    vehiculos.add(B);
-                                }//case 3
-                                case 4 -> {
-                                    String[] temp2 = ModificarMotocicleta();
-                                    Motocicleta M = new Motocicleta(Integer.parseInt(temp2[0]), Boolean.parseBoolean(temp2[1]), temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
-                                    vehiculos.add(M);
-                                }//case 4
-                                case 5 -> {
-                                    String[] temp2 = ModificarBicicleta();
-                                    Bicicleta B = new Bicicleta(temp2[0], Integer.parseInt(temp2[1]), Boolean.parseBoolean(temp2[2]), temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
-                                    vehiculos.add(B);
-                                }//case 5
-                                default -> {
-                                    System.out.println("Opcion Incorrecta... ");
-                                }//case default
-                            }//switch opcion 3
-                        }
-                        case 2 -> {
-                            System.out.println("De que consecionaria ocupa eliminar:");
-                            imprimirArrayList(concesionarias);
-                            int a = leer.nextInt();
-                            System.out.println("Que vehiculo ocupa eliminar");
-                            for (int i = 0; i < concesionarias.get(a).getArrayVehiculos().size(); i++) {
-                                System.out.println(i + ". " + concesionarias.get(a).getArrayVehiculos().get(i));
+                                int resp = leer.nextInt();
+                                String[] temp = ModificarVehiculos();
+                                switch (resp) {
+                                    case 1 -> {
+                                        String[] temp2 = ModificarCarro();
+                                        Carro C = new Carro(Integer.parseInt(temp2[0]), Integer.parseInt(temp2[1]), temp2[2], temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
+                                        vehiculos.add(C);
+                                    }//case 1
+                                    case 2 -> {
+                                        String[] temp2 = ModificarCamion();
+                                        Camion C = new Camion(Integer.parseInt(temp2[0]), Integer.parseInt(temp2[1]), Boolean.parseBoolean(temp2[2]), temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
+                                        vehiculos.add(C);
+                                    }//case 2
+                                    case 3 -> {
+                                        System.out.println("Ingrese el numero maximo de Pacientes: ");
+                                        Bus B = new Bus(leer.nextInt(), temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
+                                        vehiculos.add(B);
+                                    }//case 3
+                                    case 4 -> {
+                                        String[] temp2 = ModificarMotocicleta();
+                                        Motocicleta M = new Motocicleta(Integer.parseInt(temp2[0]), Boolean.parseBoolean(temp2[1]), temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
+                                        vehiculos.add(M);
+                                    }//case 4
+                                    case 5 -> {
+                                        String[] temp2 = ModificarBicicleta();
+                                        Bicicleta B = new Bicicleta(temp2[0], Integer.parseInt(temp2[1]), Boolean.parseBoolean(temp2[2]), temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), Double.parseDouble(temp[4]), Integer.parseInt(temp[5]), temp[6]);
+                                        vehiculos.add(B);
+                                    }//case 5
+                                    default -> {
+                                        System.out.println("Opcion Incorrecta... ");
+                                    }//case default
+                                }//switch opcion 3
                             }
-                            int b = leer.nextInt();
-                            vehiculos.remove(concesionarias.get(a).getArrayVehiculos().get(b));
-                            concesionarias.get(a).getArrayVehiculos().remove(b);
+                            case 2 -> {
+                                System.out.println("De que consecionaria ocupa eliminar:");
+                                imprimirArrayList(concesionarias);
+                                int a = leer.nextInt();
+                                System.out.println("Que vehiculo ocupa eliminar");
+                                for (int i = 0; i < concesionarias.get(a).getArrayVehiculos().size(); i++) {
+                                    System.out.println(i + ". " + concesionarias.get(a).getArrayVehiculos().get(i));
+                                }
+                                int b = leer.nextInt();
+                                vehiculos.remove(concesionarias.get(a).getArrayVehiculos().get(b));
+                                concesionarias.get(a).getArrayVehiculos().remove(b);
+                            }
                         }
                     }
                 }//case 3
