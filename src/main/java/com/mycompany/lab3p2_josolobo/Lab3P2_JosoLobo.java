@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Lab3P2_JosoLobo {
 
-    static ArrayList<Concesionaria> consecionarias = new ArrayList();
+    static ArrayList<Concesionaria> concesionarias = new ArrayList();
 
     public static void main(String[] args) {
         ArrayList<Vehiculo> vehiculos = new ArrayList();
@@ -43,12 +43,13 @@ public class Lab3P2_JosoLobo {
                             double saldo = leer.nextDouble();
                             IdVehiculos++;
                             Concesionaria V = new Concesionaria(nombre, direccion, IdVehiculos, saldo);
-                            consecionarias.add(V);
+                            concesionarias.add(V);
 
                         }
                         case 2 -> {
-                            imprimirArrayList(consecionarias);
+                            imprimirArrayList(concesionarias);
                             System.out.println("Ingrese la opcion");
+                            concesionarias.remove(leer.nextInt());
                         }
                     }
                 }//case 1
@@ -137,20 +138,54 @@ public class Lab3P2_JosoLobo {
                         }
                         case 2 -> {
                             System.out.println("De que consecionaria ocupa eliminar:");
-                            imprimirArrayList(consecionarias);
+                            imprimirArrayList(concesionarias);
                             int a = leer.nextInt();
                             System.out.println("Que vehiculo ocupa eliminar");
-                            for (int i = 0; i < consecionarias.get(a).getArrayVehiculos().size(); i++) {
-                                System.out.println(i + ". " + consecionarias.get(a).getArrayVehiculos().get(i));
+                            for (int i = 0; i < concesionarias.get(a).getArrayVehiculos().size(); i++) {
+                                System.out.println(i + ". " + concesionarias.get(a).getArrayVehiculos().get(i));
                             }
                             int b = leer.nextInt();
-                            vehiculos.remove(consecionarias.get(a).getArrayVehiculos().get(b));
-                            consecionarias.get(a).getArrayVehiculos().remove(b);
+                            vehiculos.remove(concesionarias.get(a).getArrayVehiculos().get(b));
+                            concesionarias.get(a).getArrayVehiculos().remove(b);
                         }
                     }
                 }//case 3
                 case 4 -> {
+                    System.out.println("""
+                                       --------------------
+                                       1. Consecionarias
+                                       2. Cliente
+                                       --------------------
+                                       Ingrese la Opcion:
+                                       """);
+                    switch (leer.nextInt()) {
+                        case 1 -> {
+                            imprimirArrayList(concesionarias);
+                            System.out.println("De que Consecionarias deseas Comprar: ");
+                            int opcion = leer.nextInt();
 
+                        }
+                        case 2 -> {
+                            imprimirArrayList(clientes);
+                            System.out.println("Que Cliente  desea Interactuar");
+                            int cliente = leer.nextInt();
+                            imprimirArrayList(concesionarias);
+                            System.out.println("De que Concesionarias deseas Comprar: ");
+                            int conce = leer.nextInt();
+                            for (int i = 0; i < concesionarias.get(conce).getArrayVehiculos().size();
+                                    i++) {
+                                concesionarias.get(conce).getArrayVehiculos().get(i);
+                            }
+                            System.out.println("Ingrese el id del vehiculo: ");
+                            int delve = leer.nextInt();
+                            Vehiculo del = concesionarias.get(conce).getArrayVehiculos().get(delve);
+                            if (del.precio > clientes.get(cliente).getSaldo()) {
+                                clientes.get(cliente).setSaldo((clientes.get(cliente).getSaldo()) - (concesionarias.get(conce).getArrayVehiculos().get(delve).getPrecio()));
+                                clientes.get(cliente).addVehiculo(del);
+                                concesionarias.get(conce).getArrayVehiculos().remove(delve);
+                            }
+                        }
+                    }
                 }//case 4
                 case 5 -> {
                     System.out.println("Saliendo...");
@@ -177,7 +212,7 @@ public class Lab3P2_JosoLobo {
         temp[4] = leer.next();
         System.out.println("Ingrese la Cantidad:");
         temp[5] = leer.next();
-        imprimirArrayList(consecionarias);
+        imprimirArrayList(concesionarias);
         System.out.println("Ingrese el Concesionario:");
         temp[6] = leer.next();
         return temp;

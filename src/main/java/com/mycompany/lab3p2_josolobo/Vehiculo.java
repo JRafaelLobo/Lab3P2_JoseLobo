@@ -56,8 +56,8 @@ public class Vehiculo {
     }
 
     public void setPrecio(double precio) {
-        if(precio>=0){
-        this.precio = precio;
+        if (precio >= 0) {
+            this.precio = precio;
         }
     }
 
