@@ -161,8 +161,21 @@ public class Lab3P2_JosoLobo {
                     switch (leer.nextInt()) {
                         case 1 -> {
                             imprimirArrayList(concesionarias);
-                            System.out.println("De que Consecionarias deseas Comprar: ");
-                            int opcion = leer.nextInt();
+                            System.out.println("Ingrese la consecionara: ");
+                            int conse = leer.nextInt();
+                            imprimirArrayList(clientes);
+                            System.out.println("De que cliente deseas Comprar: ");
+                            int cliente = leer.nextInt();
+                            imprimirArrayList(clientes.get(cliente).getArrayVehiculos());
+                            System.out.println("Que carro desea comprar");
+                            int carro = leer.nextInt();
+                            Vehiculo car = clientes.get(cliente).getArrayVehiculos().get(carro);
+                            if (concesionarias.get(conse).getSaldo() > clientes.get(cliente).getArrayVehiculos().get(carro).precio) {
+                                concesionarias.get(conse).setSaldo(concesionarias.get(conse).getSaldo() - clientes.get(cliente).getArrayVehiculos().get(carro).precio);
+                                clientes.get(conse).setSaldo(concesionarias.get(conse).getSaldo() + clientes.get(cliente).getArrayVehiculos().get(carro).precio);
+                                concesionarias.get(conse).addVehiculo(car);
+                                clientes.get(cliente).removeVehiculo(car);
+                            }
 
                         }
                         case 2 -> {
@@ -181,6 +194,7 @@ public class Lab3P2_JosoLobo {
                             Vehiculo del = concesionarias.get(conce).getArrayVehiculos().get(delve);
                             if (del.precio > clientes.get(cliente).getSaldo()) {
                                 clientes.get(cliente).setSaldo((clientes.get(cliente).getSaldo()) - (concesionarias.get(conce).getArrayVehiculos().get(delve).getPrecio()));
+                                concesionarias.get(conce).setSaldo((clientes.get(cliente).getSaldo()) + (concesionarias.get(conce).getArrayVehiculos().get(delve).getPrecio()));
                                 clientes.get(cliente).addVehiculo(del);
                                 concesionarias.get(conce).getArrayVehiculos().remove(delve);
                             }

@@ -15,6 +15,10 @@ public class Cliente {
         this.nombre = nombre;
     }
 
+    public ArrayList<Vehiculo> getArrayVehiculos() {
+        return vehiculos;
+    }
+
     public double getSaldo() {
         return saldo;
     }
